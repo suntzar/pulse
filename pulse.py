@@ -236,7 +236,7 @@ def render_dashboard(conn: sqlite3.Connection):
         esq_1_raw = f"█ {id_str}  {nome_upper}"
         esq_1_fmt = f"{c('█', cb)} {c(id_str, f'1;{cb}')}  {c(nome_upper, '1')}"
         dir_1_raw = f"{h['streak']}d seq"
-        dir_1_fmt = f"{c(f\"{h['streak']}d\", f'1;{cb}')} {c('seq', '2')}"
+        dir_1_fmt = f"{c(str(h['streak']) + 'd', f'1;{cb}')} {c('seq', '2')}"
         print(alinhar(esq_1_raw, esq_1_fmt, dir_1_raw, dir_1_fmt))
 
         status_esq, status_dir = h["display_left"], h["display_right"]
